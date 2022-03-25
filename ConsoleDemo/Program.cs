@@ -7,9 +7,11 @@ var cu = context.CourseUnits.Where(x => x.Name == "Math")
 
 var studentCU = context.StudentCourseUnits
     .Where(x => x.Id == 1)
-    .Include(x=>x.Student)
-    .Include(x=>x.CourseUnit)
-    .ToList();
+    .Include(x => x.Student)
+    .Include(x => x.CourseUnit)
+    .FirstOrDefault();
+
+var student = studentCU.Student;
 
 
 Console.ReadKey();
